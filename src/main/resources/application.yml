@@ -1,0 +1,20 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+logging:
+  pattern:
+    console: "%d %-5i indelevel %logger : %msg%n"
+  level:
+    org:
+      hibernate:
+        SQL: debug
+
+server:
+  port: 9090
+
+parameter:
+  security:
+    enable: true
