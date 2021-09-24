@@ -29,5 +29,4 @@ public class ContactEntity {
     private String civilStatus;
     @Column(name = "has_brothers")
     private Boolean hasBrothers;
-
 }
