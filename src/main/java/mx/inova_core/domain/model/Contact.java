@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Setter
@@ -19,4 +20,5 @@ public class Contact {
     private String foto;
     private String civilStatus;
     private Boolean hasBrothers;
+    private Timestamp createdAt;
 }

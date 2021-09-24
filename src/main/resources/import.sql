@@ -20,7 +20,7 @@ INSERT INTO users_rols (user_id, role_id) VALUES (1, 9);
 INSERT INTO users_rols (user_id, role_id) VALUES (2, 1);
 
 
-INSERT INTO conatcs (name, last_name, birth, foto, civil_status, has_brothers ) VALUES ('Jaime', 'Ruiz', now(), 'adfsf', '1', true)
+INSERT INTO conatcs (name, last_name, birth, foto, civil_status, has_brothers, created_at ) VALUES ('Jaime', 'Ruiz', now(), 'adfsf', '1', true, now())
 
 
 

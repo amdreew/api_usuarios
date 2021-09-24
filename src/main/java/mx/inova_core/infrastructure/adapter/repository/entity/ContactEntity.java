@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Getter
@@ -29,4 +30,6 @@ public class ContactEntity {
     private String civilStatus;
     @Column(name = "has_brothers")
     private Boolean hasBrothers;
+    @Column(name = "created_at")
+    private Timestamp createdAt;
 }
