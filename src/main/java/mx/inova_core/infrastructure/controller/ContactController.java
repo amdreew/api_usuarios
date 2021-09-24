@@ -37,14 +37,14 @@ public class ContactController {
     @PostMapping()
     public ResponseEntity<?> save(@Valid @RequestBody ContactDTO contactDTO, BindingResult result) {
         ResponseEntity<?> responseValidator = this.iValidatorGenericParams.validateParams(result);
-        return responseValidator == null? new ResponseEntity<>(this.port.save(contactDTO), HttpStatus.CREATED)
+        return responseValidator == null? new ResponseEntity<>(new ApiResponse<>(this.port.save(contactDTO), null), HttpStatus.CREATED)
                 : responseValidator;
     }
 
     @PutMapping()
     public ResponseEntity<?> update(@Valid @RequestBody ContactDTO contactDTO, BindingResult result) {
         ResponseEntity<?> responseValidator = this.iValidatorGenericParams.validateParams(result);
-        return responseValidator == null? new ResponseEntity<>(this.port.update(contactDTO), HttpStatus.CREATED)
+        return responseValidator == null? new ResponseEntity<>(new ApiResponse<>(this.port.update(contactDTO), null), HttpStatus.CREATED)
                 : responseValidator;
     }
 
