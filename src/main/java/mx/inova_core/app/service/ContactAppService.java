@@ -7,6 +7,8 @@ import mx.inova_core.app.port.ContactAppPort;
 import mx.inova_core.domain.service.ContactService;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,12 +26,13 @@ public class ContactAppService implements ContactAppPort {
 
     @Override
     public ContactDTO update(ContactDTO contactDTO) {
-        return null;
+        return this.mapper.toDTO(this.service.save(this.mapper.toDomain(contactDTO)));
     }
 
     @Override
     public ContactDTO save(ContactDTO contactDTO) {
-        return null;
+        contactDTO.setCreatedAt(new Timestamp((new Date()).getTime()));
+        return this.mapper.toDTO(this.service.save(this.mapper.toDomain(contactDTO)));
     }
 
     @Override
@@ -42,6 +45,6 @@ public class ContactAppService implements ContactAppPort {
 
     @Override
     public void deleteById(Long id) {
-
+        this.service.deleteById(id);
     }
 }

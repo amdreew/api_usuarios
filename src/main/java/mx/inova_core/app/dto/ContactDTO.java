@@ -24,8 +24,6 @@ public class ContactDTO {
     private String lastName;
     @NotNull(message = "no puede ser null")
     private Date birth;
-    @NotNull(message = "no puede ser null")
-    @NotEmpty(message = "no puede ser vacio")
     private String foto;
     @NotNull(message = "no puede ser null")
     @NotEmpty(message = "no puede ser vacio")
