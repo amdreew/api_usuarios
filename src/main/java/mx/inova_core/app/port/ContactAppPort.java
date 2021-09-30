@@ -9,5 +9,5 @@ public interface ContactAppPort {
     ContactDTO update(ContactDTO contactDTO);
     ContactDTO save(ContactDTO contactDTO);
     List<ContactDTO> getAll();
-    void deleteById(Long id);
+    String deleteById(Long id);
 }

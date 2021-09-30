@@ -5,7 +5,6 @@ import mx.inova_core.app.dto.ContactDTO;
 import mx.inova_core.app.port.ContactAppPort;
 import mx.inova_core.infrastructure.controller.config.ApiResponse;
 import mx.inova_core.infrastructure.controller.filter.IValidatorGenericParams;
-import mx.inova_core.infrastructure.controller.filter.ValidatorGenericParams;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -49,8 +48,8 @@ public class ContactController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public void deleteByID(@PathVariable Long id) {
-      this.port.deleteById(id);
+    public ApiResponse<String> deleteByID(@PathVariable Long id) {
+      return new ApiResponse<>(this.port.deleteById(id), null);
     }
 
 }

@@ -6,6 +6,7 @@ import mx.inova_core.app.mapper.ContactAppMapper;
 import mx.inova_core.app.port.ContactAppPort;
 import mx.inova_core.domain.service.ContactService;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -44,7 +45,9 @@ public class ContactAppService implements ContactAppPort {
     }
 
     @Override
-    public void deleteById(Long id) {
+    @Transactional
+    public String deleteById(Long id) {
         this.service.deleteById(id);
+        return "el contacto ha sido eliminado";
     }
 }
